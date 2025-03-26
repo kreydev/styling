@@ -1,0 +1,111 @@
+/* ==UserStyle==
+@name           Submitty Redesign
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         KreyDev
+==/UserStyle== */
+
+@-moz-document domain("cs.rpi.edu") {
+    
+    @property --angle {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+    }
+    
+    @keyframes rotate {
+      to {
+        --angle: 360deg;
+      }
+    }
+    
+    * {
+        z-index: 1;
+        border-radius: 20px;
+        transition-duration: .15s;
+    }
+    .rainbow {
+        background-image: linear-gradient( var(--angle), rgb(255 0 0 / 30%), rgb(255 255 0 / 30%), rgb(0 255 0 / 30%), rgb(0 255 155 / 30%), rgb(0 0 255 / 30%), rgb(255 0 255 / 30%), rgb(255 0 0 / 30%) );
+        animation: 32s rotate ease-in-out infinite;
+        filter: blur(5000px) saturate(.8);
+    }
+    #rainbow-mode {
+        border-radius:100px;
+        scale: .98;
+        filter: blur(5000px) saturate(.8);
+        z-index: 0;
+        overflow: hidden;
+    }
+    .flex-row.nav-row.selected{
+        background: #335;
+        border: 2px solid #558;
+    }
+    .btn {
+        background: #89f;
+        border-radius: 16px;
+        border: 2px solid #78E;
+    }
+    .btn:hover {
+        border: 2px solid #78E;
+        background:#67D;
+    }
+    .content {
+        background: none;
+        background-color: #33335566;
+        filter: drop-shadow(0px 0px 5px #113);
+        border-radius: 20px;
+        border: 2px solid #558;
+        margin-left: 3rem;
+    }
+    .flex-row.nav-row{
+        border-radius: 0px 20px 20px 0px;
+        * {
+            background:none;
+        }
+        border-left:none;
+        scale: 1.05;
+    }
+    aside ul {
+        border: 2px solid #335;
+        border-left:none;
+        border-radius: 0px 20px 20px 0px;
+        background: #33335566;
+        filter: drop-shadow(0px 0px 5px #113);
+    }
+    .flex-row.shadow {
+        border:none;
+        background:none;
+        filter: drop-shadow(0px 0px 5px #113); 
+        margin-bottom: -1.45rem;
+    }
+    .shadow {
+        box-shadow:none;
+    }
+    td {
+        border-radius: 0px;
+    }
+    #duckdiv {
+        background-image: url(https://submitty.cs.rpi.edu/img/moorthy_duck/06-june.svg);
+        background-repeat: no-repeat;
+        background-size:contain;
+    }
+    #moorthy-duck {
+        visibility: hidden;
+    }
+    .meter {
+        background: none;
+        position: relative;
+        top: -1rem;
+        border:2px solid #78E;
+        border-top: none;
+        border-radius: 0px 0px 20px 20px;
+        height: 1rem;
+        span {
+            border-radius: 0px 0px 18px 18px;
+            background: #8f9;
+            filter: blur(.1rem);
+        }
+        
+    }
+}
