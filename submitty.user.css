@@ -1,17 +1,21 @@
 /* ==UserStyle==
 @name           Submitty Redesign
-@namespace      github.com/openstyles/stylus
-@version        1.0.0
-@description    A new userstyle
+@namespace      github.com/kreydev/styling
+@version        1.1.0
+@description    Makes Submitty UI suck less
 @author         KreyDev
 ==/UserStyle== */
 
 @-moz-document domain("cs.rpi.edu") {
-    
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     @property --angle {
         syntax: "<angle>";
         initial-value: 0deg;
         inherits: false;
+    }
+    
+    * {
+        font-family: "Fira Sans", sans-serif;
     }
     
     @keyframes rotate {
@@ -20,7 +24,21 @@
       }
     }
     
-    * {
+    :is(#courses) {
+        margin-left:2rem !important;
+    }
+
+    
+    :is(.thread_box) {
+        margin-bottom: 1rem;
+    }
+    
+    :is(.system-message) {
+        z-index: 2;
+        margin-top: 2rem;
+    }
+    
+    :not(.pre-forum *):not(.system-message) {
         z-index: 1;
         border-radius: 20px;
         transition-duration: .15s;
@@ -67,12 +85,25 @@
         scale: 1.05;
     }
     aside ul {
-        border: 2px solid #335;
+        font-size: 10pt;
+        border: 2px solid #558;
         border-left:none;
-        border-radius: 0px 20px 20px 0px;
-        background: #33335566;
+        border-radius: 0px 20px 20px 0px !important;
+        background-color: #33335566 !important;
+        filter: drop-shadow(0px 0px 5px #113);
+        padding: .5rem;
+        > :hover{
+            background-color: #faf7 !important;
+        }
+    }
+    
+    #courses,.notification-panel {
+        border: 2px solid #558;
+        border-radius: 20px !important;
+        background-color: #33335566 !important;
         filter: drop-shadow(0px 0px 5px #113);
     }
+    
     .flex-row.shadow {
         border:none;
         background:none;
@@ -107,5 +138,9 @@
             filter: blur(.1rem);
         }
         
+    }
+    
+    #nav-sidebar-collapse-sidebar {
+        display: none;
     }
 }
