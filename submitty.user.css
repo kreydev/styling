@@ -1,9 +1,17 @@
 /* ==UserStyle==
 @name           Submitty Redesign
 @namespace      github.com/kreydev/styling
-@version        1.1.0
+@version        1.2.0
 @description    Makes Submitty UI suck less
 @author         KreyDev
+@var select bgGradient "BG Colors" {
+    "gay:Rainbow": "#E785, #E78a, #EA8a, #EE8a, #7E8a, #8CEa, #78Ea, #C9Ea, #C9E5",
+    "bi:Bisexual": "#D9C5, #D9Ca, #D9Ca, #B8Da, #67Da, #67D5",
+    "trans:Transgender": "#7BDa, #D9Ca, #DDFa, #D9Ca, #7BDa",
+    "pan:Pansexual": "#E785, #E78a, #DD7a, #67Da, #67D5",
+    "lesbian:Lesbian": "#D97a, #FB9a, #DDFa, #DAFa, #B8Da"
+}
+
 ==/UserStyle== */
 
 @-moz-document domain("cs.rpi.edu") {
@@ -46,7 +54,7 @@
     .rainbow {
         background-image: 
             url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='1000%25' height='1000%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
-            linear-gradient( var(--angle), #E785, #E78a, #EA8a, #EE8a, #7E8a, #8CEa, #78Ea, #C9Ea, #C9E5 );
+            linear-gradient( var(--angle), var(--bgGradient) );
 /*         filter: blur(500px) saturate(49); */
         animation: 15s rotate ease-in-out infinite;
     }
