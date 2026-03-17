@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Submitty Redesign
 @namespace      github.com/kreydev/styling
-@version        1.2.0
+@version        1.3.0
 @description    Makes Submitty UI suck less
 @author         KreyDev
 @var select bgGradient "BG Colors" {
@@ -55,12 +55,9 @@
         background-image: 
             url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='1000%25' height='1000%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
             linear-gradient( var(--angle), var(--bgGradient) );
-/*         filter: blur(500px) saturate(49); */
         animation: 15s rotate ease-in-out infinite;
     }
     #rainbow-mode {
-/*         border-radius:100px; */
-/*         scale: .98; */
         filter: saturate(4) blur(100px) ;
         z-index: 0;
         overflow: hidden;
@@ -69,14 +66,24 @@
         background: #335;
         border: 2px solid #558;
     }
-    .btn {
-        background: #89f;
+    
+    .gradeable-row {
+        border-bottom: 0px !important;
+    }
+    
+    .btn, .btn:visited {
+        background: #DAF;
         border-radius: 16px;
-        border: 2px solid #78E;
+        border: 2px solid #C9E;
+        color: #335 !important;
     }
     .btn:hover {
-        border: 2px solid #78E;
-        background:#67D;
+        border: 2px solid #C9E;
+        background:#B8D;
+    }
+    .btn:active {
+        border: 2px solid #B8D !important;
+        background:#C9E !important;
     }
     .content {
         background: none;
@@ -138,7 +145,7 @@
         background: none;
         position: relative;
         top: -1rem;
-        border:2px solid #78E;
+        border:2px solid #C9E;
         border-top: none;
         border-radius: 0px 0px 20px 20px;
         height: 1rem;
@@ -150,7 +157,71 @@
         
     }
     
+    .notification > div {
+        border:2px solid #C9E !important;
+        background-color: #335 !important;
+        margin-bottom: .5rem;
+    }
+    
+    .notification.unseen > div:hover {
+        border:2px solid #C9E !important;
+        background-color: #B8D !important;
+        margin-bottom: .5rem;
+    }
+    
+    .markdown-area-header, .markdown-area-body, .markdown-area {
+        background-color: transparent !important;
+        border: none;
+    }
+    
+    .important {
+        border: 4px solid #FF9 !important;
+    }
+    
+    .new_thread {
+        border: 4px solid #8F9;
+        background-color: #446;
+    }
+    
+    .active {
+        background-color: #B8D;
+        border-color: #67D;
+        margin-left: -.5rem;
+    }
+    
+    .post_box {
+        background-color: #446 !important;
+    }
+    
+    input:not([type="button"]):not([type="submit"]), select, .markdown-textarea{
+        border: 1px solid #cce !important;
+        color: #cce !important;
+        background-color: #446 !important;
+        
+    }
+    input::placeholder {
+        color: #cce;
+    }
+    
     #nav-sidebar-collapse-sidebar {
         display: none;
+    }
+    
+    table {
+        border-radius: 0px !important;
+        td {
+            border-radius: 0px !important;
+            border: 1px solid #cce !important;
+        }
+    }
+    
+    .gradeable_message {
+        background-color: #67Da !important;
+    }
+    
+    .submission-details, #submitted-files {
+        background: none;
+        border: none;
+        box-shadow: none;
     }
 }
