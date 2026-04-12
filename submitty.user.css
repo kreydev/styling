@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Submitty Redesign
 @namespace      github.com/kreydev/styling
-@version        1.3.0
+@version        1.4.0
 @description    Makes Submitty UI suck less
 @author         KreyDev
 @var select bgGradient "BG Colors" {
@@ -9,7 +9,8 @@
     "bi:Bisexual": "#D9C5, #D9Ca, #D9Ca, #B8Da, #67Da, #67D5",
     "trans:Transgender": "#7BDa, #D9Ca, #DDFa, #D9Ca, #7BDa",
     "pan:Pansexual": "#E785, #E78a, #DD7a, #67Da, #67D5",
-    "lesbian:Lesbian": "#D97a, #FB9a, #DDFa, #DAFa, #B8Da"
+    "lesbian:Lesbian": "#D97a, #FB9a, #DDFa, #DAFa, #B8Da",
+    "genderq:Genderqueer": "#6D7a, #DDFa, #B8Da"
 }
 
 ==/UserStyle== */
@@ -223,5 +224,27 @@
         background: none;
         border: none;
         box-shadow: none;
+    }
+    
+    .popup-form .form-title {
+        border: 0px;
+        font-size: 10pt;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+    .popup-window {
+        background-color: #4466 !important;
+        z-index: 5 !important;
+        border: 2px solid #67D;
+        backdrop-filter: blur(1rem);
+    }
+
+    .dropdown-menu {
+        transition: opacity;
+        background-color: #557 !important;
+        border: 2px solid #67D;
+        padding: 4px;
+        border-radius:18px;
     }
 }
